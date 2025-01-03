@@ -1,0 +1,52 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Laravel API",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/todos": {
+            "get": {
+                "tags": [
+                    "todos"
+                ],
+                "summary": "todoリストを取得する",
+                "description": "todoリストを取得する",
+                "operationId": "c8949d2a4b5755a600f2937bc1949b48",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Todo"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Todo": {
+                "title": "Todo",
+                "description": "Todo model",
+                "required": [
+                    "id, name"
+                ],
+                "type": "object"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "todos",
+            "description": "todos"
+        }
+    ]
+}
