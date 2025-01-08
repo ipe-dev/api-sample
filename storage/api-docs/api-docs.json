@@ -39,6 +39,19 @@
                 "required": [
                     "id, name"
                 ],
+                "properties": {
+                    "id": {
+                        "description": "ID",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 1
+                    },
+                    "name": {
+                        "description": "Todo name",
+                        "type": "string",
+                        "example": "Buy milk"
+                    }
+                },
                 "type": "object"
             }
         }
