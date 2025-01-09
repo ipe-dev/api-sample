@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers¥todos\todoController;
+use App\Http\Controllers\Todos\todoListController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/users')->group(function() {
@@ -8,9 +8,9 @@ Route::prefix('/users')->group(function() {
 });
 
 Route::prefix('/todos')->group(function () {
-   Route::get('/', [todoController::class, 'index']); 
-   Route::post('/create', [todoController::class, 'create']);
-   Route::get('/{id}', [todoController::class, 'show']);
-   Route::delete('/{id}', [todoController::class, 'delete']);
-   Route::put('/{id}', [todoController::class, 'update']);
+   Route::get('/', [todoListController::class, 'index']); 
+   Route::post('/create', [todoCreateController::class, 'create']);
+   Route::get('/{id}', [todoDetailController::class, 'show']);
+   Route::delete('/{id}', [todoDeleteController::class, 'delete']);
+   Route::put('/{id}', [todoUpdateController::class, 'update']);
 });
