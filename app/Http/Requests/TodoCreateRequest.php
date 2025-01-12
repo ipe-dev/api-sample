@@ -1,23 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
-*      @OA\Schema(
-*          title="TodoCreateRequest",
-*          description="Todo作成リクエスト",
-*          type="object",
-*          required={"name"},
-*           @OA\Property(
-*           title="name",
-*           description="Todo名",
-*           example="Buy milk",
-*          )
-*      )
-*/
-class TodoCreateRequest extends FormRequest
+ *      @OA\Schema(
+ *          title="TodoCreateRequest",
+ *          description="Todo作成リクエスト",
+ *          type="object",
+ *          required={"name"},
+ *           @OA\Property(
+ *           title="name",
+ *           description="Todo名",
+ *           example="Buy milk",
+ *          )
+ *      )
+ */
+final class TodoCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

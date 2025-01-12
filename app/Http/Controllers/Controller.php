@@ -1,6 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
+
 use OpenApi\Annotations as OA;
 
 /**
@@ -9,7 +12,4 @@ use OpenApi\Annotations as OA;
  *   version="1.0.0"
  * )
  */
-abstract class Controller
-{
-
-}
+abstract class Controller {}

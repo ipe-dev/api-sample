@@ -1,11 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Todos;
 
 use App\Http\Controllers\Controller;
 use OpenApi\Annotations as OA;
 
-class todoListController extends Controller
+final class todoListController extends Controller
 {
     /**
      * @OA\Get(
@@ -23,8 +25,5 @@ class todoListController extends Controller
      *     )
      * )
      */
-    public function __invoke()
-    {
-        
-    }
+    public function __invoke() {}
 }

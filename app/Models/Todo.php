@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
@@ -26,7 +28,7 @@ use OpenApi\Annotations as OA;
  *            ),
  *      )
  */
-class Todo extends Model
+final class Todo extends Model
 {
     //
 }
