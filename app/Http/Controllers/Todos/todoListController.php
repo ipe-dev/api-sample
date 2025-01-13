@@ -22,8 +22,27 @@ final class todoListController extends Controller
      *             type="array",
      *             @OA\Items(ref="#/components/schemas/Todo")
      *         )
-     *     )
+     *     ),
+     *     @OA\Response(
+     *       response=500,
+     *       description="Internal Server Error",
+     *       @OA\JsonContent(
+     *         @OA\Property(
+     *           property="message",
+     *           type="string",
+     *           example="Internal Server Error",
+     *           ),
+     *        ),
+     *             ),
      * )
      */
-    public function __invoke() {}
+    public function __invoke() {
+        try {
+            $todos = \App\Models\Todo::all();
+            return response()->json($todos);
+        } catch (\Exception $e) {
+            Log::error("Error: {$e->getMessage()}");
+            return response()->json(['message' => 'Internal Server Error'], 500);
+        }
+    }
 }
