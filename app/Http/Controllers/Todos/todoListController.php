@@ -16,25 +16,8 @@ final class todoListController extends Controller
      *     tags={"todos"},
      *     summary="todoリストを取得する",
      *     description="todoリストを取得する",
-     *     @OA\Response(
-     *         response=200,
-     *         description="Successful operation",
-     *         @OA\JsonContent(
-     *             type="array",
-     *             @OA\Items(ref="#/components/schemas/Todo")
-     *         )
-     *     ),
-     *     @OA\Response(
-     *       response=500,
-     *       description="Internal Server Error",
-     *       @OA\JsonContent(
-     *         @OA\Property(
-     *           property="message",
-     *           type="string",
-     *           example="Internal Server Error",
-     *         ),
-     *       ),
-     *     ),
+     *     @OA\Response(response=200, description="Successful operation", @OA\JsonContent(type="array", @OA\Items(ref="#/components/schemas/Todo"))),
+     *     @OA\Response(response=500, description="Internal Server Error", @OA\JsonContent(@OA\Property(property="message", type="string", example="Internal Server Error"))),
      * )
      */
     public function __invoke()

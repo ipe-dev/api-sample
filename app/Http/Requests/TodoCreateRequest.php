@@ -13,7 +13,8 @@ use Illuminate\Foundation\Http\FormRequest;
  *          type="object",
  *          required={"name"},
  *           @OA\Property(
- *           title="name",
+ *           property="name",             
+ *           type="string",
  *           description="Todo名",
  *           example="Buy milk",
  *          )

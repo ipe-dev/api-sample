@@ -11,7 +11,7 @@ Route::prefix('/users')->group(function () {
 
 Route::prefix('/todos')->group(function () {
     Route::get('/', [todoListController::class, 'index']);
-    Route::post('/create', [todoCreateController::class, 'create']);
+    Route::post('/', [todoCreateController::class, 'create']);
     Route::get('/{id}', [todoDetailController::class, 'show']);
     Route::delete('/{id}', [todoDeleteController::class, 'delete']);
     Route::put('/{id}', [todoUpdateController::class, 'update']);

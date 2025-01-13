@@ -1,0 +1,83 @@
+openapi: 3.0.0
+info:
+  title: 'Laravel API'
+  version: 1.0.0
+paths:
+  /todos/:
+    post:
+      tags:
+        - Tags
+      summary: Todoを作成する
+      description: Todoとなる文字列を受け取り、Todoを作成する
+      operationId: 'Create Todo'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TodoCreateRequest'
+      responses:
+        201:
+          description: 'Successful operation'
+  /todos:
+    get:
+      tags:
+        - todos
+      summary: todoリストを取得する
+      description: todoリストを取得する
+      operationId: c8949d2a4b5755a600f2937bc1949b48
+      responses:
+        200:
+          description: 'Successful operation'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Todo'
+        500:
+          description: 'Internal Server Error'
+          content:
+            application/json:
+              schema:
+                properties:
+                  message:
+                    type: string
+                    example: 'Internal Server Error'
+                type: object
+components:
+  schemas:
+    TodoCreateRequest:
+      title: TodoCreateRequest
+      description: Todo作成リクエスト
+      required:
+        - name
+      properties:
+        name:
+          description: Todo名
+          type: string
+          example: 'Buy milk'
+      type: object
+    Todo:
+      title: Todo
+      description: 'Todo model'
+      required:
+        - 'id, name'
+      properties:
+        id:
+          description: ID
+          type: integer
+          format: int64
+          example: 1
+        name:
+          description: 'Todo name'
+          type: string
+          example: 'Buy milk'
+      type: object
+tags:
+  -
+    name: Tags
+    description: Tags
+  -
+    name: todos
+    description: todos
