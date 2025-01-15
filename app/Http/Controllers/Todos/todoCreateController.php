@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TodoCreateRequest;
 use OpenApi\Annotations as OA;
 
-final class todoCreateController extends Controller
+class todoCreateController extends Controller
 {
     /**
      * @OA\Post(
