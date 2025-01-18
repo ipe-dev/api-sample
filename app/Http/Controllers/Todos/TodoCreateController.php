@@ -14,7 +14,7 @@ final class todoCreateController extends Controller
      * @OA\Post(
      *      path="/todos/",
      *      operationId="Create Todo",
-     *      tags={"Tags"},
+     *      tags={"todos"},
      *      summary="Todoを作成する",
      *      description="Todoとなる文字列を受け取り、Todoを作成する",
      *      @OA\RequestBody(

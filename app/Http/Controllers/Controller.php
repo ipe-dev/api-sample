@@ -8,7 +8,7 @@ use OpenApi\Annotations as OA;
 
 /**
  * @OA\Info(
- *   title="Laravel API",
+ *   title="todo list api",
  *   version="1.0.0"
  * )
  */

@@ -25,8 +25,8 @@ final class TodoDeleteController extends Controller
      *          @OA\Examples(example="int", value="1", summary="an int value"),
      *      ),
      *      @OA\Response(
-     *          response=Response Code,
-     *          description="Response Message",
+     *          response=200,
+     *          description="削除成功",
      *       ),
      *     )
      */

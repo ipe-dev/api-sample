@@ -1,12 +1,12 @@
 openapi: 3.0.0
 info:
-  title: 'Laravel API'
+  title: 'todo list api'
   version: 1.0.0
 paths:
   /todos/:
     post:
       tags:
-        - Tags
+        - todos
       summary: Todoを作成する
       description: Todoとなる文字列を受け取り、Todoを作成する
       operationId: 'Create Todo'
@@ -19,13 +19,35 @@ paths:
       responses:
         201:
           description: 'Successful operation'
+  '/todos/{id}':
+    delete:
+      tags:
+        - todos
+      summary: todoを削除する
+      description: todoを削除する
+      operationId: Title
+      parameters:
+        -
+          name: id
+          in: path
+          description: 削除対象のtodoのID
+          required: true
+          schema:
+            type: int
+          examples:
+            int:
+              summary: 'an int value'
+              value: '1'
+      responses:
+        200:
+          description: 削除成功
   /todos:
     get:
       tags:
         - todos
       summary: todoリストを取得する
       description: todoリストを取得する
-      operationId: c8949d2a4b5755a600f2937bc1949b48
+      operationId: b03fcdee95a50470c67ff89fb50c0729
       responses:
         200:
           description: 'Successful operation'
@@ -75,9 +97,6 @@ components:
           example: 'Buy milk'
       type: object
 tags:
-  -
-    name: Tags
-    description: Tags
   -
     name: todos
     description: todos

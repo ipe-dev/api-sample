@@ -6,6 +6,7 @@ use App\Http\Controllers\Todos\todoCreateController;
 use App\Http\Controllers\Todos\TodoDeleteController;
 use App\Http\Controllers\Todos\TodoDetailController;
 use App\Http\Controllers\Todos\TodoListController;
+use App\Http\Controllers\Todos\TodoUpdateController;
 use App\Http\Controllers\Users\UserLoginController;
 use Illuminate\Support\Facades\Route;
 
